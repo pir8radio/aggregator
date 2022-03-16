@@ -1,6 +1,6 @@
 <img align="right" src="https://i.imgur.com/YdcmVnS.png" height="200">
 
-# Aggregator - Signum mier Proxy
+# Aggregator - Signum Miner Proxy
 
 ### Requirements
 - go >= 1.11
