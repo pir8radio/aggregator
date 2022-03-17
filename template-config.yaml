@@ -1,5 +1,5 @@
 # aggregator configuration
-listenAddr: "0.0.0.0:7777"                                  # address proxy listens on
+listenAddr: "0.0.0.0:7777"                                  # address proxy listens on, set miners to this devices IP and this port.
 scanTime: 200                                               # your maximum scantime in seconds (collision avoidance only need adjustment if multi-mining)
 displayMiners: true                                         # displays info on connected miners at the beginning of each round
 
