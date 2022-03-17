@@ -25,7 +25,7 @@ import (
 )
 
 const (
-	version                = "1.2.3"
+	version                = "1.2.4"
 	defaultCacheExpiration = 15 * time.Minute
 	minerCacheExpiration   = 60 * time.Second
 	exceededMinersPerIP    = 0
@@ -198,7 +198,7 @@ func tryUpdateRound(w *http.ResponseWriter, r *http.Request, ip string, round *m
 		} else {
 			atomic.StoreUint64(&secBest, deadline)
 		}
-		log.Println("DL response:", round.Height, round.AccountID, round.Nonce, deadline)
+		log.Println("DL submitted:", round.Height, round.AccountID, round.Nonce, deadline)
 		return updated
 	}
 	ipData := ipDataV.(*ipData)
@@ -238,7 +238,7 @@ update:
 	} else {
 		atomic.StoreUint64(&secBest, deadline)
 	}
-	log.Println("DL response:", round.Height, round.AccountID, round.Nonce, deadline)
+	log.Println("DL submitted:", round.Height, round.AccountID, round.Nonce, deadline)
 	return updated
 }
 
