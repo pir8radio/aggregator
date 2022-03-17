@@ -38,15 +38,15 @@ jobs:
 
       - name: Run Linux Build
         if: matrix.os == 'ubuntu-latest'
-        run: echo "Ubuntu Latest" > release_ubuntu
+        run: go build -v ./...
       
       - name: Run Mac Build
         if: matrix.os == 'macos-latest'
-        run: echo "MacOS Latest" > release_mac
+        run: go build -v ./...
 
       - name: Run Windows Build
         if: matrix.os == 'windows-latest'
-        run: echo "Windows Latest" > release_windows
+        run: go build -v ./...
 
       - name: Release
         uses: softprops/action-gh-release@v1
