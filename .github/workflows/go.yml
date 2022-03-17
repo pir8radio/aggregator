@@ -7,13 +7,17 @@ on:
 jobs:
   releases-matrix:
     name: Release Go Binary
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         # build and publish in parallel: linux/386, linux/amd64,
-        goos: [linux]
+        goos: [windows]
         goarch: ["386", amd64]
-
+        exclude:
+          - goarch: "386"
+            goos: darwin
+          - goarch: arm64
+            goos: windows
     steps:
     - uses: actions/checkout@v2
     - uses: wangyoucao577/go-release-action@v1.25
