@@ -26,7 +26,7 @@ jobs:
     - name: Build
       run: go build -v ./...
     - name: Upload binaries to release
-      uses: pir8radio/upload-release-action@v2
+      uses: aggregator/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/${{ matrix.artifact_name }}
