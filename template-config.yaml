@@ -1,18 +1,18 @@
 # aggregator configuration
-listenAddr: "127.0.0.1:7777"                                # address proxy listens on
-scanTime: 20                                                # your maximum scantime in seconds (collision avoidance)
+listenAddr: "0.0.0.0:7777"                                  # address proxy listens on
+scanTime: 200                                               # your maximum scantime in seconds (collision avoidance only need adjustment if multi-mining)
 displayMiners: true                                         # displays info on connected miners at the beginning of each round
 
 #primary chain
-primarySubmitURL: "http://50-50-pool.burst.cryptoguru.org:8124" # primary chain:    url to forward nonces to (pool, wallet)
+primarySubmitURL: "https://signapool.notallmine.net"        # primary chain:    url to forward nonces to (pool, wallet)
 primaryTargetDeadline: 31536000                             # primary chain:    target deadline
 primaryPassphrase: ""                                       # primary chain:    passphrase overwrite (optional), empty -> passphrase from client will be forwarded if any
 primaryIpForwarding: false                                  # primary chain:    set X-Forwarded-For Headder                                
-primaryIgnoreWorseDeadlines: false                          # primary chain:    ignore a deadline if a better deadline has already been found. 
-primaryAccountKey: ""                                       # primary chain:    account key 
+primaryIgnoreWorseDeadlines: true                           # primary chain:    ignore a deadline if a better deadline has already been found (saves bandwidth). 
+primaryAccountKey: ""                                       # primary chain:    account key (not needed for most pools)
 
 #secondary chain
-secondarySubmitURL: "wss://ecominer.hdpool.com"             # secondary chain:  url to forward nonces to (pool, wallet)
+secondarySubmitURL: "wss://some.bhdpool.com"                # secondary chain:  url to forward nonces to (pool, wallet)
 secondaryTargetDeadline: 1000000000                         # secondary chain:  target deadline
 secondaryPassphrase: ""                                     # secondary chain:  passphrase overwrite (optional), empty -> passphrase from client will be forwarded if any
 secondaryIpForwarding: false                                # secondary chain:  set X-Forwarded-For Headder                                
