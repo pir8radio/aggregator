@@ -1,4 +1,4 @@
-<img align="right" src="https://imgur.com/a/MwUjMYf" height="200">
+<img align="right" src="https://i.imgur.com/yL7BOTK.png" height="200">
 
 # Aggregator - Signum Miner Proxy
 
