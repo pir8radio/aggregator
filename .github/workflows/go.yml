@@ -2,22 +2,32 @@ name: Release
 on:
   push:
     tags:
-      - "*" # triggers only if push new tag version, like `0.8.4`
-
+      - "v*" # triggers only if push new tag version, like `0.8.4`
+        
 jobs:
+  publish:
+    name: Publish for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact_name: Aggregator
+            asset_name: Aggregator-linux-amd64
+          - os: windows-latest
+            artifact_name: Aggregator.exe
+            asset_name: Aggregator-windows-amd64
+          - os: macos-latest
+            artifact_name: Aggregator
+            asset_name: Aggregator-macos-amd64
 
-  build:
-    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.17
-
     - name: Build
       run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
+    - name: Upload binaries to release
+      uses: pir8radio/upload-release-action@v2
+      with:
+        file: target/release/${{ matrix.artifact_name }}
+        asset_name: ${{ matrix.asset_name }}
+        tag: ${{ github.ref }}
