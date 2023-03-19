@@ -3,13 +3,21 @@ listenAddr: "0.0.0.0:7777"                                  # address proxy list
 scanTime: 200                                               # your maximum scantime in seconds (collision avoidance only need adjustment if multi-mining)
 displayMiners: true                                         # displays info on connected miners at the beginning of each round
 
-#primary chain
-primarySubmitURL: "https://signapool.notallmine.net"	    # primary chain:    url of pool
+#primary signum pool
+primarySubmitURL: "https://signapool.notallmine.net"	      # primary chain:    url of mining pool
 primaryTargetDeadline: 31536000                             # primary chain:    target deadline
-primaryPassphrase: ""                                       # primary chain:    passphrase overwrite (not used for nam)
+primaryPassphrase: ""                                       # primary chain:    passphrase overwrite (normally not required)
 primaryIpForwarding: false                                  # primary chain:    set X-Forwarded-For Headder                                
 primaryIgnoreWorseDeadlines: true                           # primary chain:    ignore a deadline if a better deadline has already been found. 
 primaryAccountKey: ""                                       # primary chain:    account key (not used for nam) 
+
+#TESTNET signum pool or secondary chain
+secondarySubmitURL: "https://t-pool.notallmine.net"         # secondary chain:  url of mining pool
+secondaryTargetDeadline: 31536000                           # secondary chain:  target deadline
+secondaryPassphrase: ""                                     # secondary chain:  passphrase overwrite (normally not required)
+secondaryIpForwarding: false                                # secondary chain:  set X-Forwarded-For Headder                                
+secondaryIgnoreWorseDeadlines: true                         # secondary chain:  ignore a deadline if a better deadline has already been found. 
+secondaryAccountKey: ""
 
 # additonal info
 minerName: "Aggregator"                                     # miner name
