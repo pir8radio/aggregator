@@ -25,7 +25,7 @@ import (
 )
 
 const (
-	version                = "1.2.4"
+	version                = "1.2.5"
 	defaultCacheExpiration = 15 * time.Minute
 	minerCacheExpiration   = 60 * time.Second
 	exceededMinersPerIP    = 0
