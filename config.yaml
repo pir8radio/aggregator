@@ -4,7 +4,7 @@ scanTime: 200                                               # your maximum scant
 displayMiners: true                                         # displays info on connected miners at the beginning of each round
 
 #primary signum pool
-primarySubmitURL: "https://signapool.notallmine.net"	      # primary chain:    url of mining pool
+primarySubmitURL: "https://signapool.notallmine.net"        # primary chain:    url of mining pool
 primaryTargetDeadline: 31536000                             # primary chain:    target deadline
 primaryPassphrase: ""                                       # primary chain:    passphrase overwrite (normally not required)
 primaryIpForwarding: false                                  # primary chain:    set X-Forwarded-For Headder                                
