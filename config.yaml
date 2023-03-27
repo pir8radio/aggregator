@@ -1,6 +1,9 @@
 # aggregator configuration
 listenAddr: "0.0.0.0:7777"                                  # address proxy listens on, set miners to this devices IP and this port.
-scanTime: 200                                               # your maximum scantime in seconds (collision avoidance only need adjustment if multi-mining)
+
+scanTime: 100                                               # your maximum scantime in seconds (collision avoidance only need adjustment if multi-mining).
+                                                            # set this to half the block time or 10 seconds more than the maximum time it takes to scan all of your plots.
+                                                            
 displayMiners: true                                         # displays info on connected miners at the beginning of each round
 
 #primary signum pool
